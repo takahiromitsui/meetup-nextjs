@@ -1,5 +1,3 @@
-import { Fragment } from 'react';
-
 import MeetupList from '@/components/meetups/MeetupList';
 
 const DUMMY_DATA = [
@@ -19,10 +17,6 @@ const DUMMY_DATA = [
   },
 ];
 
-const HomePage = () => (
-  <Fragment>
-    <MeetupList meetups={DUMMY_DATA} />
-  </Fragment>
-);
+const HomePage = () => <MeetupList meetups={DUMMY_DATA} />;
 
 export default HomePage;
