@@ -1,6 +1,12 @@
+import { useRef } from 'react';
+
 import Card from '../ui/Card';
 
 const NewMeetupForm = () => {
+  const titleInputRef = useRef<HTMLInputElement>(null);
+  const imageInputRef = useRef<HTMLInputElement>(null);
+  const addressInputRef = useRef<HTMLInputElement>(null);
+  const descriptionInputRef = useRef<HTMLTextAreaElement>(null);
   return (
     <Card>
       <form className='p-4'>
@@ -13,6 +19,7 @@ const NewMeetupForm = () => {
             type='text'
             required
             id='title'
+            ref={titleInputRef}
           />
         </div>
         <div className='mb-2'>
@@ -24,6 +31,7 @@ const NewMeetupForm = () => {
             type='url'
             required
             id='image'
+            ref={imageInputRef}
           />
         </div>
         <div className='mb-2'>
@@ -35,6 +43,7 @@ const NewMeetupForm = () => {
             type='text'
             required
             id='address'
+            ref={addressInputRef}
           />
         </div>
         <div className='mb-2'>
@@ -46,6 +55,7 @@ const NewMeetupForm = () => {
             required
             id='description'
             rows={5}
+            ref={descriptionInputRef}
           ></textarea>
         </div>
       </form>
