@@ -69,7 +69,9 @@
   .h4 {
     @apply font-primary text-base font-bold md:text-lg;
   }
-
+  body {
+    margin: 0;
+  }
   body,
   .p {
     @apply font-primary text-sm md:text-base;
