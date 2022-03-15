@@ -7,12 +7,12 @@ const Navigation = () => (
       <ul className='m-0 flex list-none items-baseline p-0'>
         <li className='ml-12'>
           <Link href='/'>
-            <a className='text-2xl font-bold text-white'>All Meetups</a>
+            <a className='text-2xl text-white'>All Meetups</a>
           </Link>
         </li>
         <li className='ml-12'>
           <Link href='/new-meetup'>
-            <a className='text-2xl font-bold text-white'>Add New Meetup</a>
+            <a className='text-2xl text-white'>Add New Meetup</a>
           </Link>
         </li>
       </ul>
