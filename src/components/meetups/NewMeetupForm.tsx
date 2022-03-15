@@ -1,15 +1,36 @@
-import { useRef } from 'react';
+import { FormEvent, useRef } from 'react';
 
 import Card from '../ui/Card';
 
-const NewMeetupForm = () => {
+type NewMeetupFormProps = {
+  // eslint-disable-next-line
+  onAddMeetup(enteredData: any): any;
+};
+
+const NewMeetupForm = (props: NewMeetupFormProps) => {
   const titleInputRef = useRef<HTMLInputElement>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
   const addressInputRef = useRef<HTMLInputElement>(null);
   const descriptionInputRef = useRef<HTMLTextAreaElement>(null);
+
+  const submitHandler = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const enteredTitle = titleInputRef.current?.value;
+    const enteredImage = imageInputRef.current?.value;
+    const enteredAddress = addressInputRef.current?.value;
+    const enteredDescription = descriptionInputRef.current?.value;
+    const data = {
+      title: enteredTitle,
+      image: enteredImage,
+      address: enteredAddress,
+      description: enteredDescription,
+    };
+    props.onAddMeetup(data);
+  };
+
   return (
     <Card>
-      <form className='p-4'>
+      <form className='p-4' onSubmit={submitHandler}>
         <div className='mb-2'>
           <label className='mb-2 inline-block font-bold' htmlFor='title'>
             Meetup Title
@@ -57,6 +78,9 @@ const NewMeetupForm = () => {
             rows={5}
             ref={descriptionInputRef}
           ></textarea>
+        </div>
+        <div>
+          <button>Add Meetup</button>
         </div>
       </form>
     </Card>
