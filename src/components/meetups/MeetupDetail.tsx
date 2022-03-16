@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { Fragment } from 'react';
 
 type MeetupDetailProps = {
   image: string;
@@ -10,12 +9,12 @@ type MeetupDetailProps = {
 
 const MeetupDetail = (props: MeetupDetailProps) => {
   return (
-    <Fragment>
+    <section className='w-full text-center'>
       <img src={props.image} alt={props.title} />
-      <h1>{props.title}</h1>
-      <address>{props.address}</address>
-      <p>{props.description}</p>
-    </Fragment>
+      <h1 className='mt-4'>{props.title}</h1>
+      <address className='mt-4'>{props.address}</address>
+      <p className='mt-4'>{props.description}</p>
+    </section>
   );
 };
 export default MeetupDetail;
