@@ -1,7 +1,9 @@
-import MeetupItem, { MeetupItemProps } from './MeetupItem';
+import MeetupItem from './MeetupItem';
+
+import { MeetupType } from '@/types/types';
 
 type MeetupListProps = {
-  meetups: MeetupItemProps[];
+  meetups: MeetupType[];
 };
 
 const MeetupList = (props: MeetupListProps) => (

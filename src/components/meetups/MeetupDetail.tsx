@@ -1,13 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+import { MeetupType } from '@/types/types';
 
-type MeetupDetailProps = {
-  image: string;
-  title: string;
-  address: string;
-  description: string;
-};
-
-const MeetupDetail = (props: MeetupDetailProps) => {
+const MeetupDetail = (props: MeetupType) => {
   return (
     <section className='w-full text-center'>
       <img src={props.image} alt={props.title} />

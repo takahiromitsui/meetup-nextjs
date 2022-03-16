@@ -1,15 +1,10 @@
+import { MeetupType } from '@/types/types';
 import { useRouter } from 'next/router';
 
 import Card from '../ui/Card';
 
-export type MeetupItemProps = {
-  id: string;
-  image: string;
-  title: string;
-  address: string;
-};
 
-const MeetupItem = (props: MeetupItemProps) => {
+const MeetupItem = (props: MeetupType) => {
   const router = useRouter();
   const showDetailsHandler = () => {
     router.push('/' + props.id);
