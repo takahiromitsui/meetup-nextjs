@@ -1,8 +1,8 @@
-import { MeetupType } from '@/types/types';
 import { useRouter } from 'next/router';
 
 import Card from '../ui/Card';
 
+import { MeetupType } from '@/types/types';
 
 const MeetupItem = (props: MeetupType) => {
   const router = useRouter();
