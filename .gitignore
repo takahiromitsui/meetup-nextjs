@@ -39,3 +39,6 @@ sitemap.xml
 
 # .vscode
 .vscode
+
+# .env
+.env
