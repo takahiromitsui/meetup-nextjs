@@ -8,10 +8,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       `mongodb+srv://${process.env.USER_NAME}:${process.env.DATABASE_PASSWORD}@cluster0.vnelg.mongodb.net/meetups?retryWrites=true&w=majority`
     );
     const db = client.db();
-    const meetupCollection = db.collection('meetups');
-    const result = await meetupCollection.insertOne(data);
-    // eslint-disable-next-line no-console
-    console.log(result);
+    const meetupsCollection = db.collection('meetups');
+    await meetupsCollection.insertOne(data);
     client.close();
     res.status(201).json({ message: 'Meetup inserted' });
   }
