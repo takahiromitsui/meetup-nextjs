@@ -1,5 +1,7 @@
 import { MongoClient } from 'mongodb';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
+import { Fragment } from 'react';
 
 import MeetupList from '@/components/meetups/MeetupList';
 
@@ -10,7 +12,18 @@ type HomePageProps = {
 };
 
 const HomePage = (props: HomePageProps) => {
-  return <MeetupList meetups={props.meetups} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>Meetup App</title>
+        <meta
+          name='description'
+          content='Meetup App by React, Nextjs, Typescript, and TailwindCSS'
+        />
+      </Head>
+      <MeetupList meetups={props.meetups} />
+    </Fragment>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

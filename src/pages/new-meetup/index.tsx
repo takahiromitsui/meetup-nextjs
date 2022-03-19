@@ -1,3 +1,6 @@
+import Head from 'next/head';
+import { Fragment } from 'react';
+
 import NewMeetupForm from '@/components/meetups/NewMeetupForm';
 
 import { MeetupType } from '../../types/types';
@@ -14,7 +17,15 @@ const NewMeetupPage = () => {
     });
     await response.json();
   };
-  return <NewMeetupForm onAddMeetup={addMeetupHandler} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>Meetup App</title>
+        <meta name='description' content='Add your new Meetup' />
+      </Head>
+      <NewMeetupForm onAddMeetup={addMeetupHandler} />
+    </Fragment>
+  );
 };
 
 export default NewMeetupPage;
