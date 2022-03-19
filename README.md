@@ -2,6 +2,8 @@
 
 This is a simple app to share meetups.
 
+Hosted with Vercel to [here](https://meetup-nextjs-flax.vercel.app/).
+
 ## Tech Stack
 
 - Next.js 12
