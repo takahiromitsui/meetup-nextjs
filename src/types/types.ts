@@ -4,4 +4,4 @@ export type MeetupType = {
   title: string;
   address: string;
   description?: string;
-}
+};
